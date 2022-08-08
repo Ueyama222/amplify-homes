@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Image, Text, View } from "@aws-amplify/ui-react";
 export default function HomeCard(props) {
-  const { home, overrides, ...rest } = props;
+  const { data, overrides, ...rest } = props;
   return (
     <View
       width="895px"
@@ -39,7 +39,7 @@ export default function HomeCard(props) {
         right="28.83%"
         width="42.35%"
         padding="0px 0px 0px 0px"
-        src={home?.image_url}
+        src={data?.image_url}
         {...getOverrideProps(overrides, "image 1")}
       ></Image>
       <Text
@@ -56,10 +56,10 @@ export default function HomeCard(props) {
         top="68.99%"
         bottom="20.99%"
         left="11.84%"
-        right="71.84%"
+        right="14.64%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Title"
+        children={data?.title}
         {...getOverrideProps(overrides, "Title")}
       ></Text>
       <Text
@@ -76,10 +76,10 @@ export default function HomeCard(props) {
         top="79.01%"
         bottom="10.97%"
         left="11.84%"
-        right="44.02%"
+        right="14.64%"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children="Description&#xD;"
+        children={data?.description}
         {...getOverrideProps(overrides, "Description")}
       ></Text>
     </View>

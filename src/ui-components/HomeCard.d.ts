@@ -5,11 +5,11 @@
  **************************************************************************/
 
 import React from "react";
-import { Home } from "../models";
+import { Data } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { ViewProps } from "@aws-amplify/ui-react";
 export declare type HomeCardProps = React.PropsWithChildren<Partial<ViewProps> & {
-    home?: Home;
+    data?: Data;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

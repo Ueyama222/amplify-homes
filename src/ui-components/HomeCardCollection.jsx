@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import React from "react";
-import { Home } from "../models";
+import { Data } from "../models";
 import {
   getOverrideProps,
   useDataStoreBinding,
@@ -17,7 +17,7 @@ export default function HomeCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Home,
+    model: Data,
   }).items;
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
@@ -34,8 +34,7 @@ export default function HomeCardCollection(props) {
     >
       {(item, index) => (
         <HomeCard
-          home={item}
-          margin="10px 10px 10px 10px"
+          data={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></HomeCard>
